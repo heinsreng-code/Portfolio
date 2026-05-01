@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI in Construction & Facilities Management Portfolio</title>
+  <style>
+    :root {
+      --periwinkle: #bbbdf6ff;
+      --soft-periwinkle: #9893daff;
+      --muted-teal: #88bdafff;
+      --lavender-grey: #797a9eff;
+      --dim-grey: #72727eff;
+      --dim-grey-2: #625f63ff;
+      --cream: #f7f1e6;
+      --ink: #2d2930;
+      --card: #ffffff;
+      --shadow: 0 12px 30px rgba(45, 41, 48, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--cream);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: var(--cream);
+      border-left: 1px solid rgba(45, 41, 48, 0.15);
+      border-right: 1px solid rgba(45, 41, 48, 0.15);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--ink);
+      color: var(--cream);
+      border-bottom: 4px solid var(--muted-teal);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 18px 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links a {
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--periwinkle);
+      border-color: var(--periwinkle);
+    }
+
+    section {
+      padding: 86px 24px;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 640px;
+      display: grid;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(136, 189, 175, 0.35), transparent 28%),
+        radial-gradient(circle at 15% 80%, rgba(187, 189, 246, 0.45), transparent 30%),
+        linear-gradient(135deg, rgba(187, 189, 246, 0.26), rgba(247, 241, 230, 1) 55%, rgba(136, 189, 175, 0.24));
+    }
+
+    .hero::before {
+      content: "AI • BIM • CMMS • FM • Digital Twin • Construction";
+      position: absolute;
+      left: -60px;
+      bottom: 40px;
+      color: rgba(98, 95, 99, 0.12);
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      transform: rotate(-4deg);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--dim-grey-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--muted-teal);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.6rem);
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      max-width: 680px;
+      font-size: 1.08rem;
+      color: var(--dim-grey-2);
+      margin-bottom: 30px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 20px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--ink);
+      color: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.35);
+      color: var(--ink);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(45, 41, 48, 0.16);
+    }
+
+    .dark-section {
+      background:
+        radial-gradient(circle at 15% 25%, rgba(187, 189, 246, 0.15), transparent 30%),
+        radial-gradient(circle at 84% 74%, rgba(136, 189, 175, 0.18), transparent 35%),
+        var(--ink);
+      color: var(--cream);
+      border-top: 1px solid rgba(247, 241, 230, 0.2);
+      border-bottom: 1px solid rgba(247, 241, 230, 0.2);
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-intro p {
+      color: inherit;
+      opacity: 0.82;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(45, 41, 48, 0.12);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      min-height: 260px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .dark-section .card {
+      background: rgba(247, 241, 230, 0.06);
+      border-color: rgba(247, 241, 230, 0.28);
+      box-shadow: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 36px rgba(45, 41, 48, 0.16);
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--periwinkle), var(--muted-teal));
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(187, 189, 246, 0.28);
+      color: var(--dim-grey-2);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .dark-section .tag-list li {
+      background: rgba(187, 189, 246, 0.16);
+      color: var(--cream);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-panel {
+      padding: 34px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(187, 189, 246, 0.34), rgba(136, 189, 175, 0.26));
+      border: 1px solid rgba(45, 41, 48, 0.12);
+    }
+
+    .about-panel ul {
+      margin-left: 18px;
+      margin-top: 14px;
+    }
+
+    .about-panel li {
+      margin-bottom: 10px;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .article-card {
+      padding: 24px;
+      border: 1px solid rgba(247, 241, 230, 0.26);
+      border-radius: 16px;
+      background: rgba(247, 241, 230, 0.06);
+    }
+
+    .article-card small,
+    .project-meta {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted-teal);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .newsletter {
+      background: linear-gradient(135deg, var(--soft-periwinkle), var(--muted-teal));
+      color: var(--ink);
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: var(--shadow);
+    }
+
+    .newsletter form {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .newsletter input {
+      flex: 1;
+      min-height: 48px;
+      border: 1px solid rgba(45, 41, 48, 0.22);
+      border-radius: 999px;
+      padding: 0 18px;
+      font: inherit;
+    }
+
+    .newsletter button {
+      min-height: 48px;
+      padding: 0 22px;
+      border: none;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--cream);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 34px 24px;
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .navbar {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .grid,
+      .about-layout,
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+
+      .newsletter form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <header>
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" href="#home">AI + FM Portfolio</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#articles">Weekly Articles</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-content">
+          <span class="eyebrow">AI in Construction & Facilities Management</span>
+          <h1>Connecting digital tools with real facility operations.</h1>
+          <p class="lead">
+            This portfolio highlights my semester work exploring artificial intelligence, BIM, construction technology, and facilities management. The projects show how AI can support better decisions, cleaner asset data, smoother handovers, and more useful information for field teams.
+          </p>
+          <div class="button-row">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn secondary" href="#articles">Read Weekly Articles</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container about-layout">
+          <div>
+            <span class="eyebrow">About Me</span>
+            <h2>Hello, I’m Hein Min Oo.</h2>
+            <p class="lead">
+              I am a civil engineering and facilities management professional with experience in construction, infrastructure, BIM coordination, and maintenance operations. My current academic focus is learning how AI can improve construction workflows and facility lifecycle management.
+            </p>
+            <p>
+              Through this course, I am connecting classroom learning with practical FM challenges such as asset information quality, preventive maintenance readiness, digital handover, technician-friendly documentation, and decision-making from reliable data.
+            </p>
+          </div>
+
+          <aside class="about-panel">
+            <h3>Portfolio Focus Areas</h3>
+            <ul>
+              <li>AI adoption in construction and facilities management</li>
+              <li>BIM-to-FM workflows and asset data quality</li>
+              <li>CMMS, BAS, GIS, and digital handover coordination</li>
+              <li>Weekly article reflections and applied learning</li>
+              <li>Practical recommendations for industry use</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="projects" class="dark-section">
+        <div class="container">
+          <div class="section-intro">
+            <span class="eyebrow">Semester Work</span>
+            <h2>Featured Projects</h2>
+            <p>
+              These project cards can be linked to separate pages, PDF reports, slide decks, or GitHub files. Replace the sample links with your final assignment links when your website is ready.
+            </p>
+          </div>
+
+          <div class="grid">
+            <article class="card">
+              <div class="card-number">01</div>
+              <span class="project-meta">Research / Case Analysis</span>
+              <h3>AI Adoption in the AEC Sector</h3>
+              <p>
+                A profile-based analysis of how construction organizations evaluate, select, and implement AI tools while managing training, leadership support, and adoption barriers.
+              </p>
+              <ul class="tag-list">
+                <li>AI Adoption</li>
+                <li>AEC</li>
+                <li>Innovation</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-number">02</div>
+              <span class="project-meta">Facilities Management</span>
+              <h3>Introduction to Facilities Management</h3>
+              <p>
+                A foundational assignment explaining the role of FM, why facilities management matters, and how maintenance operations support safety, reliability, cost control, and the user experience.
+              </p>
+              <ul class="tag-list">
+                <li>FM Basics</li>
+                <li>Operations</li>
+                <li>Lifecycle</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-number">03</div>
+              <span class="project-meta">BIM / Digital Handover</span>
+              <h3>BIM-to-FM Workflow Checklist</h3>
+              <p>
+                A practical checklist for reviewing model usability, asset tagging, metadata completeness, O&M manuals, warranties, and technician-friendly access after project turnover.
+              </p>
+              <ul class="tag-list">
+                <li>BIM</li>
+                <li>CMMS</li>
+                <li>Handover</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-number">04</div>
+              <span class="project-meta">AI Tools</span>
+              <h3>No-Code AI Automation Concept</h3>
+              <p>
+                A concept study showing how no-code tools, AI agents, and structured prompts can reduce repetitive work, organize information, and support construction/FM decision-making.
+              </p>
+              <ul class="tag-list">
+                <li>No-Code</li>
+                <li>AI Agents</li>
+                <li>Automation</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-number">05</div>
+              <span class="project-meta">Presentation</span>
+              <h3>AI in Construction Presentation</h3>
+              <p>
+                A short presentation summarizing key findings, use cases, challenges, and recommendations for applying AI in construction companies and facility organizations.
+              </p>
+              <ul class="tag-list">
+                <li>Presentation</li>
+                <li>Findings</li>
+                <li>Recommendations</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-number">06</div>
+              <span class="project-meta">Reflection</span>
+              <h3>Course Learning Reflection</h3>
+              <p>
+                A personal reflection on how AI, data, and digital workflows can improve project delivery, maintenance planning, and communication between construction and operations teams.
+              </p>
+              <ul class="tag-list">
+                <li>Reflection</li>
+                <li>Learning</li>
+                <li>FM Practice</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="articles" class="dark-section">
+        <div class="container">
+          <div class="section-intro">
+            <span class="eyebrow">Weekly Articles</span>
+            <h2>Article Summaries & Reflections</h2>
+            <p>
+              This section can hold your weekly article summaries for class. Each card can link to a separate article page or PDF summary.
+            </p>
+          </div>
+
+          <div class="article-grid">
+            <article class="article-card">
+              <small>Week 01 / AI Foundations</small>
+              <h3>How AI Is Changing Construction Workflows</h3>
+              <p>
+                Summary placeholder: Explain the main argument, how the article connects to construction, and what lesson can be applied to future projects.
+              </p>
+            </article>
+
+            <article class="article-card">
+              <small>Week 02 / Digital Transformation</small>
+              <h3>Data Quality as the Starting Point for AI</h3>
+              <p>
+                Summary placeholder: Discuss why reliable data is necessary before using AI for forecasting, automation, or facilities decision-making.
+              </p>
+            </article>
+
+            <article class="article-card">
+              <small>Week 03 / BIM + FM</small>
+              <h3>Connecting BIM Models to Facility Operations</h3>
+              <p>
+                Summary placeholder: Reflect on how digital handover, asset tagging, and model usability can support technicians after construction is complete.
+              </p>
+            </article>
+
+            <article class="article-card">
+              <small>Week 04 / Ethics + Risk</small>
+              <h3>Responsible AI Use in Project Decisions</h3>
+              <p>
+                Summary placeholder: Identify potential risks such as bias, unclear accountability, privacy concerns, and overreliance on AI outputs.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="newsletter">
+            <span class="eyebrow">Contact</span>
+            <h2>Let’s stay connected.</h2>
+            <p>
+              This portfolio was created for an AI in Construction and Facilities Management course. Please use this section for your email, LinkedIn, GitHub, or class contact information.
+            </p>
+            <form action="#" method="post">
+              <input type="email" name="email" placeholder="name@example.com" aria-label="Email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 Hein Min Oo. AI in Construction & Facilities Management Portfolio.</p>
+        <p><a href="#home">Back to top ↑</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
